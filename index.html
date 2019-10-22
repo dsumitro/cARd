@@ -1,0 +1,177 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+    <script src="https://rawgit.com/aframevr/aframe/master/dist/aframe-master.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+      <a-scene embedded arjs = 'trackingMethod: best;'>
+          <a-anchor hit-testing-enabled='true'>
+           
+            <a-plane height="2" width="3" color="cyan" position="0 0 0"> </a-plane>
+          </a-anchor>
+            <a-camera-static/>
+      </a-scene>
+  </body>
+</html>  -->
+
+<html>
+  <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+  <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js"></script>
+  <body style="margin : 0px; overflow: hidden;">
+    <a-scene embedded arjs>
+      <a-assets>
+        <img id="my-image" src="./imgs/Dean-Sumitro.jpg" />
+        <img id="my-site" src="./imgs/profile.png" />
+        <img id="my-github" src="./imgs/github.png" />
+        <img id="my-linkedin" src="./imgs/linkedinlogo.png" />
+      </a-assets>
+      <a-marker preset="hiro">
+        <!-- Size of display is based off of size of marker -->
+        <a-plane
+          height="2"
+          width="3"
+          color="cyan"
+          position="-4 0 -2"
+          rotation="-90 0 0"
+          opacity=".50"
+        >
+          <a-image
+            src="#my-image"
+            width="1.125"
+            height="1.5"
+            position="-0.75 0 .25"
+          ></a-image>
+          <a-text
+            value="
+          Dean Sumitro \n
+          Full Stack Engineer \n
+          Talent Path \n
+          Los Angeles, CA \n
+          (555) 867 - 5309
+          "
+            width="3"
+            height="2"
+            position=" 0 0 .25"
+          >
+          </a-text>
+        </a-plane>
+        <a-plane
+          height="1.5"
+          width="3"
+          color="cyan"
+          opacity=".50"
+          position="-4 0 0"
+          rotation="-90 0 0"
+          border-radius="25px"
+        >
+          <a-text
+            value="
+          Hi, I'm Dean \n
+          I just do things. Like messing around with AR.js to make stuff like this \n
+          I need more filler text to prove a point so here it is. \n
+          Thank you for reading this far in my pointless blurb \n
+          "
+            position="-1.25 0 .25"
+            width="2.5"
+            height="3"
+          >
+          </a-text>
+        </a-plane>
+        <a-plane
+          height="4"
+          width="3"
+          color="cyan"
+          opacity=".50"
+          position="0 0 -1"
+          rotation="-90 0 0"
+        >
+          <a-text
+            position="-1.25 1 .25"
+            value="Skills or something here:"
+          ></a-text>
+          <a-text
+            position="-1.25 0 .25"
+            value="
+          Fine Dining \n
+          Breathing \n
+          Existing \n
+          Machine Code Whisperer
+          "
+          >
+          </a-text>
+        </a-plane>
+        <a-plane
+          height="2"
+          width="3"
+          color="cyan"
+          opacity=".50"
+          position="4 0 -1"
+          rotation="-90 0 0"
+        >
+          <a-text
+            position="-1.25 0 .25"
+            width="2.5"
+            height="2"
+            value="
+            More important Info like how to for loop\n
+            People love a good for loop\n
+            var i;
+            for (i = 0; i < 5; i++) \n
+            { \n
+            numbers += numbers + i; \n
+            }
+          "
+          >
+          </a-text>
+        </a-plane>
+        <a-circle
+          opacity="0"
+          radius=".45"
+          position="-1 0 1.75"
+          rotation="-90 0 0"
+        >
+          <a-image
+            src="#my-site"
+            width=".75"
+            height=".75"
+            position=" 0 0 .25"
+          ></a-image>
+        </a-circle>
+        <a-circle
+          opacity="0"
+          radius=".45"
+          position="1 0 1.75"
+          rotation="-90 0 0"
+        >
+          <a-image
+            src="#my-github"
+            width=".75"
+            height=".75"
+            position=" 0 0 .25"
+          ></a-image>
+        </a-circle>
+        <a-circle
+          opacity="0"
+          radius=".45"
+          position="3 0 1.75"
+          rotation="-90 0 0"
+        >
+          <a-image
+            src="#my-linkedin"
+            width=".75"
+            height=".75"
+            position=" 0 0 .25"
+          ></a-image>
+        </a-circle>
+        <!-- <a-circle color="blue" radius="2" position="1 1 0"></a-circle>
+           <a-circle color="blue " radius="2" position="2 1 0"></a-circle> -->
+      </a-marker>
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>
