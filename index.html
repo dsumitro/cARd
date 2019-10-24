@@ -18,23 +18,68 @@
       </a-scene>
   </body>
 </html>  -->
+<!-- HELLO PLS DON'T ROAST ME ON THE STRUCTURE AND THE NON-CLEAN CODE I WILL CLEAN IT UP I SWEAR I JUST WANTED IT TO WORK -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Libraries for AR and aframe -->
+    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js"></script>
 
-<html>
-  <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
-  <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js"></script>
+    <!-- Library for handling events on 3d objects-->
+    <!-- <script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script> -->
+    <!-- on-click interactivity -->
+    <script>
+      AFRAME.registerComponent('direct-to-website', {
+        init: function () {
+          var data = this.data;
+          var el = this.el;
+          el.addEventListener('click', function () {
+            window.open("https://deandoesdev.netlify.com/");
+          })
+        }
+      });
+    </script>
+        <script>
+          AFRAME.registerComponent('direct-to-github', {
+            init: function () {
+              var data = this.data;
+              var el = this.el;
+              el.addEventListener('click', function () {
+                window.open("https://github.com/dsumitro");
+              })
+            }
+          });
+        </script>
+            <script>
+              AFRAME.registerComponent('direct-to-linkedin', {
+                init: function () {
+                  var data = this.data;
+                  var el = this.el;
+                  el.addEventListener('click', function () {
+                    window.open("https://www.linkedin.com/in/deansumitro/");
+                  })
+                }
+              });
+            </script>
+  </head>
   <body style="margin : 0px; overflow: hidden;">
-    <a-scene embedded arjs>
+    <a-scene embedded arjs ='debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'' >
       <a-assets>
         <img id="my-image" src="./imgs/Dean-Sumitro.jpg" />
         <img id="my-site" src="./imgs/profile.png" />
         <img id="my-github" src="./imgs/github.png" />
         <img id="my-linkedin" src="./imgs/linkedinlogo.png" />
+        <!-- <video id="dancy" autoplay src="imgs/test-vid.mp4"/> -->
       </a-assets>
       <a-marker preset="hiro">
         <!-- Size of display is based off of size of marker -->
         <a-plane
-          height="2"
-          width="3"
+        id="nametag"
+          height="2vh"
+          width="3vw"
           color="cyan"
           position="-4 0 -2"
           rotation="-90 0 0"
@@ -129,11 +174,14 @@
           >
           </a-text>
         </a-plane>
+        <!--  
+      <a-link href="index.html" title="My Homepage" image="#homeThumbnail"></a-link> -->
         <a-circle
-          opacity="0"
+          opacity=".2"
           radius=".45"
           position="-1 0 1.75"
           rotation="-90 0 0"
+          direct-to-website
         >
           <a-image
             src="#my-site"
@@ -143,10 +191,11 @@
           ></a-image>
         </a-circle>
         <a-circle
-          opacity="0"
+          opacity=".2"
           radius=".45"
           position="1 0 1.75"
           rotation="-90 0 0"
+          direct-to-github
         >
           <a-image
             src="#my-github"
@@ -156,10 +205,11 @@
           ></a-image>
         </a-circle>
         <a-circle
-          opacity="0"
+          opacity=".2"
           radius=".45"
           position="3 0 1.75"
           rotation="-90 0 0"
+          direct-to-linkedin
         >
           <a-image
             src="#my-linkedin"
@@ -168,10 +218,11 @@
             position=" 0 0 .25"
           ></a-image>
         </a-circle>
+        <!-- <a-video src="#dancy" width="4" height="3" position="0 3  0" rotation="-90 0 0"></a-video> -->
         <!-- <a-circle color="blue" radius="2" position="1 1 0"></a-circle>
            <a-circle color="blue " radius="2" position="2 1 0"></a-circle> -->
       </a-marker>
-      <a-entity camera></a-entity>
+      <a-entity camera> <a-cursor></a-cursor></a-entity>
     </a-scene>
   </body>
 </html>
