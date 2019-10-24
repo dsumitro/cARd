@@ -36,7 +36,11 @@
         init: function() {
           var data = this.data;
           var el = this.el;
-          el.addEventListener("click", function() {
+          // el.addEventListener("click", function() {
+          //   event.preventDefault();
+          //   window.open("https://deandoesdev.netlify.com/");
+          // });
+          el.addEventListener("mouseup", function() {
             event.preventDefault();
             window.open("https://deandoesdev.netlify.com/");
           });
