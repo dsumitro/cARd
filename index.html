@@ -36,10 +36,7 @@
         init: function() {
           var data = this.data;
           var el = this.el;
-          // el.addEventListener("click", function() {
-          //   event.preventDefault();
-          //   window.open("https://deandoesdev.netlify.com/");
-          // });
+
           el.addEventListener("mouseup", function() {
             event.preventDefault();
             window.open("https://deandoesdev.netlify.com/");
@@ -56,8 +53,31 @@
         init: function() {
           var data = this.data;
           var el = this.el;
-          el.addEventListener("click", function() {
+
+          el.addEventListener("mouseup", function() {
+            event.preventDefault();
             window.open("https://github.com/dsumitro");
+          });
+          el.addEventListener("touchend", function() {
+            event.preventDefault();
+            window.open("https://github.com/dsumitro");
+          });
+        }
+      });
+    </script>
+    <script>
+      AFRAME.registerComponent("direct-to-linkedin", {
+        init: function() {
+          var data = this.data;
+          var el = this.el;
+
+          el.addEventListener("mouseup", function() {
+            event.preventDefault();
+            window.open("https://www.linkedin.com/in/deansumitro/");
+          });
+          el.addEventListener("touchend", function() {
+            event.preventDefault();
+            window.open("https://www.linkedin.com/in/deansumitro/");
           });
         }
       });
