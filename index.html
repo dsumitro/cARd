@@ -29,7 +29,7 @@
     <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js"></script>
 
     <!-- Library for handling events on 3d objects-->
-    <!-- <script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script> -->
+    <script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
     <!-- on-click interactivity -->
     <script>
       AFRAME.registerComponent("direct-to-website", {
@@ -49,17 +49,6 @@
           var el = this.el;
           el.addEventListener("click", function() {
             window.open("https://github.com/dsumitro");
-          });
-        }
-      });
-    </script>
-    <script>
-      AFRAME.registerComponent("direct-to-linkedin", {
-        init: function() {
-          var data = this.data;
-          var el = this.el;
-          el.addEventListener("click", function() {
-            window.open("https://www.linkedin.com/in/deansumitro/");
           });
         }
       });
@@ -176,12 +165,12 @@
         </a-plane>
 
         <a-circle
-          opacity=".2"
+          opacity="1"
           radius=".45"
           position="-1 0 1.75"
           rotation="-90 0 0"
+          color="cyan"
           direct-to-website
-          event-set__goto="_event: click; href: ${https://www.linkedin.com/in/deansumitro/)}"
         >
           <a-image
             src="#my-site"
@@ -191,7 +180,8 @@
           ></a-image>
         </a-circle>
         <a-circle
-          opacity=".2"
+          opacity="1"
+          color="cyan"
           radius=".45"
           position="1 0 1.75"
           rotation="-90 0 0"
@@ -205,7 +195,8 @@
           ></a-image>
         </a-circle>
         <a-circle
-          opacity=".2"
+          opacity="1"
+          color="cyan"
           radius=".45"
           position="3 0 1.75"
           rotation="-90 0 0"
