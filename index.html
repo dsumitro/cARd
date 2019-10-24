@@ -32,41 +32,41 @@
     <!-- <script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script> -->
     <!-- on-click interactivity -->
     <script>
-      AFRAME.registerComponent('direct-to-website', {
-        init: function () {
+      AFRAME.registerComponent("direct-to-website", {
+        init: function() {
           var data = this.data;
           var el = this.el;
-          el.addEventListener('click', function () {
+          el.addEventListener("click", function() {
             window.open("https://deandoesdev.netlify.com/");
-          })
+          });
         }
       });
     </script>
-        <script>
-          AFRAME.registerComponent('direct-to-github', {
-            init: function () {
-              var data = this.data;
-              var el = this.el;
-              el.addEventListener('click', function () {
-                window.open("https://github.com/dsumitro");
-              })
-            }
+    <script>
+      AFRAME.registerComponent("direct-to-github", {
+        init: function() {
+          var data = this.data;
+          var el = this.el;
+          el.addEventListener("click", function() {
+            window.open("https://github.com/dsumitro");
           });
-        </script>
-            <script>
-              AFRAME.registerComponent('direct-to-linkedin', {
-                init: function () {
-                  var data = this.data;
-                  var el = this.el;
-                  el.addEventListener('click', function () {
-                    window.open("https://www.linkedin.com/in/deansumitro/");
-                  })
-                }
-              });
-            </script>
+        }
+      });
+    </script>
+    <script>
+      AFRAME.registerComponent("direct-to-linkedin", {
+        init: function() {
+          var data = this.data;
+          var el = this.el;
+          el.addEventListener("click", function() {
+            window.open("https://www.linkedin.com/in/deansumitro/");
+          });
+        }
+      });
+    </script>
   </head>
   <body style="margin : 0px; overflow: hidden;">
-    <a-scene embedded arjs ='debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'' >
+    <a-scene embedded arjs="debugUIEnabled: false; trackingMethod: best;">
       <a-assets>
         <img id="my-image" src="./imgs/Dean-Sumitro.jpg" />
         <img id="my-site" src="./imgs/profile.png" />
@@ -77,7 +77,7 @@
       <a-marker preset="hiro">
         <!-- Size of display is based off of size of marker -->
         <a-plane
-        id="nametag"
+          id="nametag"
           height="2vh"
           width="3vw"
           color="cyan"
@@ -106,8 +106,8 @@
           </a-text>
         </a-plane>
         <a-plane
-          height="1.5"
-          width="3"
+          height="1.5vh"
+          width="3vw"
           color="cyan"
           opacity=".50"
           position="-4 0 0"
@@ -128,8 +128,8 @@
           </a-text>
         </a-plane>
         <a-plane
-          height="4"
-          width="3"
+          height="4vh"
+          width="3vw"
           color="cyan"
           opacity=".50"
           position="0 0 -1"
@@ -151,8 +151,8 @@
           </a-text>
         </a-plane>
         <a-plane
-          height="2"
-          width="3"
+          height="2vh"
+          width="3vw"
           color="cyan"
           opacity=".50"
           position="4 0 -1"
