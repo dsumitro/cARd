@@ -30,13 +30,14 @@
 
     <!-- Library for handling events on 3d objects-->
     <script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
+
     <!-- on-click interactivity -->
     <script>
       AFRAME.registerComponent("direct-to-website", {
         init: function() {
           var data = this.data;
           var el = this.el;
-
+          // For Desktop & Mobile functionality
           el.addEventListener("mouseup", function() {
             event.preventDefault();
             window.open("https://deandoesdev.netlify.com/");
@@ -90,9 +91,8 @@
         <img id="my-site" src="./imgs/profile.png" />
         <img id="my-github" src="./imgs/github.png" />
         <img id="my-linkedin" src="./imgs/linkedinlogo.png" />
-        <!-- <video id="dancy" autoplay src="imgs/test-vid.mp4"/> -->
       </a-assets>
-      <a-marker preset="hiro">
+      <a-marker preset="hiro" smooth="true">
         <!-- Size of display is based off of size of marker -->
         <a-plane
           id="nametag"
@@ -115,7 +115,7 @@
           Full Stack Engineer \n
           Talent Path \n
           Los Angeles, CA \n
-          (555) 867 - 5309
+          (914) 374 - 5113
           "
             width="3"
             height="2"
@@ -135,9 +135,9 @@
           <a-text
             value="
           Hi, I'm Dean \n
-          I just do things. Like messing around with AR.js to make stuff like this \n
-          I need more filler text to prove a point so here it is. \n
-          Thank you for reading this far in my pointless blurb \n
+          I'm a full stack engineer with a strong interest in frontend 
+          development, UI/UX, and Augmented Reality. \n
+          Please look around the cARd! \n
           "
             position="-1.25 0 .25"
             width="2.5"
@@ -153,41 +153,50 @@
           position="0 0 -1"
           rotation="-90 0 0"
         >
+          <a-text position="-1.25 1.5 .25" value="Skills"></a-text>
           <a-text
-            position="-1.25 1 .25"
-            value="Skills or something here:"
-          ></a-text>
-          <a-text
+            height="4"
+            width="3"
             position="-1.25 0 .25"
             value="
-          Fine Dining \n
-          Breathing \n
-          Existing \n
-          Machine Code Whisperer
+          HTML/CSS/JavaScript \n
+          PERN (PostgreSQL, Express, React, Node) \n
+          Agile | Scru | Kanban \n
+          Version control (Git) \n
+          Cloud Solutions (Heroku, Netlify)\n
+          UX Research\n
+          Web Design\n
+          Prototyping/Wireframing (Figma, Sketch)\n
           "
           >
           </a-text>
         </a-plane>
         <a-plane
-          height="2"
-          width="3"
+          height="1.5"
+          width="1.5"
           color="cyan"
           opacity=".50"
-          position="4 0 -1"
+          position="3 0 -1"
           rotation="-90 0 0"
         >
           <a-text
-            position="-1.25 0 .25"
+            align="center"
+            position=" 0 .50 .25"
             width="2.5"
             height="2"
             value="
-            More important Info like how to for loop\n
-            People love a good for loop\n
-            var i;
-            for (i = 0; i < 5; i++) \n
-            { \n
-            numbers += numbers + i; \n
-            }
+        Projects:
+      "
+          >
+          </a-text>
+          <a-text
+            position=" -.50 0 .25"
+            width="2.5"
+            height="2"
+            value="
+            Flow\n
+            cARds (This) \n
+            More on my portfolio!
           "
           >
           </a-text>
@@ -238,9 +247,6 @@
             position=" 0 0 .25"
           ></a-image>
         </a-circle>
-        <!-- <a-video src="#dancy" width="4" height="3" position="0 3  0" rotation="-90 0 0"></a-video> -->
-        <!-- <a-circle color="blue" radius="2" position="1 1 0"></a-circle>
-           <a-circle color="blue " radius="2" position="2 1 0"></a-circle> -->
       </a-marker>
       <a-entity camera> <a-cursor></a-cursor></a-entity>
     </a-scene>
